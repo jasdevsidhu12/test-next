@@ -2,17 +2,23 @@
   "name": "test-next",
   "version": "0.1.0",
   "private": true,
+  "main": "server/server.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "copy": "node copy-static-files.js",
     "preserver": "npm run build && node copy-static-files.js && tsc --project server/server.tsconfig.json",
-    "preeserver": "tsc --project server/server.tsconfig.json",
-    "server": "node server/dist/server.js"
+    "server": "node server/server.js",
+    "preserve": "npm run preserver",
+    "serve": "firebase emulators:start --only functions,hosting",
+    "preedeploy": "npm run preserver",
+    "deploy": "firebase deploy --only functions,hosting"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.1",
     "next": "10.0.5",
     "react": "17.0.1",
     "react-dom": "17.0.1"

@@ -1,11 +1,12 @@
 const express = require('express');
 const { parse } = require('url');
 const { default: next } = require('next');
+import * as functions from "firebase-functions";
 
 const app = express();
-const port = 3000;
+// const port = 3000;
 
-app.use(express.static('./server/dist'));
+// app.use(express.static('./server/dist'));
 
 const server = next({
   dev: false,
@@ -19,6 +20,7 @@ app.get('/test', (req: any, res: any) => {
   server.prepare().then(() => nextjsHandle(req, res, parsedUrl));
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Example app listening at http://localhost:${port}`)
+// });
+export const helloWorld = functions.https.onRequest(app);

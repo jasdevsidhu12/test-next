@@ -3,7 +3,7 @@
     "module": "commonjs",
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "outDir": "./dist",
+    "outDir": ".",
     "sourceMap": false,
     "strict": true,
     "target": "es2017"

@@ -6,7 +6,9 @@
 .pnp.js
 
 dist
-
+server.js
+.firebase
+*.log
 # testing
 /coverage
 
