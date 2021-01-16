@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "preserver": "npm run build && tsc --project server.tsconfig.json",
-    "server": "node server.js"
+    "copy": "node copy-static-files.js",
+    "preserver": "npm run build && node copy-static-files.js && tsc --project server/server.tsconfig.json",
+    "preeserver": "tsc --project server/server.tsconfig.json",
+    "server": "node server/dist/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@types/node": "^14.14.20",
     "@types/react": "^17.0.0",
+    "fs-extra": "^9.0.1",
     "typescript": "^4.1.3"
   }
 }

@@ -5,11 +5,11 @@ const { default: next } = require('next');
 const app = express();
 const port = 3000;
 
-app.use(express.static('public'));
+app.use(express.static('./server/dist'));
 
 const server = next({
   dev: false,
-  conf: { distDir: './public/_next' },
+  conf: { distDir: './server/dist/_next' },
 });
 
 const nextjsHandle = server.getRequestHandler();
