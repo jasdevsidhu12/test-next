@@ -9,8 +9,6 @@
     "start": "next start",
     "copy": "node copy-static-files.js",
     "preserver": "npm run build && node copy-static-files.js && tsc --project server/server.tsconfig.json",
-    "server": "node server/server.js",
-    "preserve": "npm run preserver",
     "serve": "firebase emulators:start --only functions,hosting",
     "predeploy": "npm run preserver",
     "deploy": "firebase deploy --only functions,hosting"
