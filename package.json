@@ -12,7 +12,7 @@
     "server": "node server/server.js",
     "preserve": "npm run preserver",
     "serve": "firebase emulators:start --only functions,hosting",
-    "preedeploy": "npm run preserver",
+    "predeploy": "npm run preserver",
     "deploy": "firebase deploy --only functions,hosting"
   },
   "dependencies": {
